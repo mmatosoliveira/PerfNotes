@@ -1,0 +1,11 @@
+<div [class.dark-theme]="isDark">
+  <app-toolbar (toggleSidenav)="toggleSidenav()" (onToggleTheme)="isDark = $event"></app-toolbar>
+  <app-sidenav #sidenav (aoSelecionarData)="buscarNotasNaData($event)">
+    <div class="container" fxLayout="column" fxLayoutAlign="space-between stretch">
+      <app-filtro-notas></app-filtro-notas>
+      <div *ngFor="let nota of notas">
+        <app-lista-notas [nota]="nota"></app-lista-notas>
+      </div>
+    </div>
+  </app-sidenav>
+</div>

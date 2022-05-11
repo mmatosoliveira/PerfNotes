@@ -1,0 +1,23 @@
+<div class="filtro">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>filter_alt</mat-icon>
+        Filtro
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div fxLayout="column" fxLayoutAlign="space-between stretch">
+      <mat-form-field appearance="fill">
+        <mat-label>Título ou Conteúdo contém:</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <div fxLayout="row" fxLayoutAlign="space-between stretch">
+        <mat-checkbox fxFlex="45">Apenas anotações resolvidas</mat-checkbox>
+        <mat-form-field appearance="fill" fxFlex="45">
+          <mat-label>Usuário</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</div>

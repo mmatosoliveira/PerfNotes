@@ -1,0 +1,34 @@
+<mat-toolbar [color]="themeColor">
+  <button mat-icon-button class="example-icon" matTooltip="Abrir ou recolher o menu lateral" aria-label="Abrir ou recolher o menu lateral" (click)="isOpened = !isOpened; toggleSidenav.emit(isOpened);">
+    <mat-icon *ngIf="!isOpened">menu</mat-icon>
+    <mat-icon *ngIf="isOpened">close</mat-icon>
+  </button>
+  <span>Anotações de Performance</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button (click)="abrirCadastro()" matTooltip="Adicionar uma nova anotação">
+    <mat-icon>note_add</mat-icon>
+  </button>
+  <button mat-icon-button (click)="toggleTheme()" matTooltip="Escolher entre tema dark ou light">
+    <mat-icon>brightness_6</mat-icon>
+  </button>
+  <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Alterar as configurações das anotações">
+    <mat-icon>settings</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>
+        tune
+      </mat-icon>
+      Alterar AppSettings.json
+    </button>
+  </mat-menu>
+
+  <!-- <button mat-button [matMenuTriggerFor]="menu" class="menu-button" matTooltip="Select a theme color">
+    {{ themeColor }}
+  </button>
+  <ng-template #noRadio>
+    radio_button_unchecked
+  </ng-template>
+   -->
+</mat-toolbar>

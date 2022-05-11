@@ -1,0 +1,20 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" opened>
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Filtrar a data</mat-label>
+      <input matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker" matTooltip="Escolher data"></mat-datepicker-toggle>
+      <mat-datepicker-toggle matSuffix><mat-icon matDatepickerToggleIcon matTooltip="Limpar data">clear</mat-icon></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-nav-list *ngFor="let item of datas">
+      <button mat-list-item (click)="aoSelecionarData.emit(item); dataSelecionada = item">
+        <mat-icon *ngIf="dataSelecionada == item" style="margin-right: 10px">visibility</mat-icon>
+        {{ item | date: "dd/MM/yyyy" }}
+      </button>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <ng-content []></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,19 @@
+<mat-card class="card-nota">
+  <mat-card-subtitle>{{ nota?.data | date:'dd/MM/yyyy' }}</mat-card-subtitle>
+  <mat-card-title>{{nota?.titulo}}</mat-card-title>
+  <mat-card-content>
+    <p>This card has divider and indeterminate progress as footer</p>
+  </mat-card-content>
+  <mat-divider inset></mat-divider>
+  <mat-card-actions align="end">
+    <button mat-button matTooltip="Ver infos completas">
+      <mat-icon>visibility</mat-icon>
+    </button>
+    <button mat-button matTooltip="Marcar como resolvido">
+      <mat-icon>add_task</mat-icon>
+    </button>
+    <button mat-button matTooltip="Editar anotação">
+      <mat-icon>edit_note</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>
